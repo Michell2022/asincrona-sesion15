@@ -1,0 +1,49 @@
+<div class="w-11/12 sm:w-3/5">
+    <div>
+        <h1>Formulario de Registro</h1>
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Carrera</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dato of datosLista; let i = index">
+                    <td>{{dato.nombre}}</td>
+                    <td>{{dato.apellido}}</td>
+                    <td>{{dato.carrera}}</td>
+                    <td><button (click)="eliminarFila(i)">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <br>
+
+    <div class="formulario">
+        <h2>Formulario de Registro</h2>
+        <div>
+            <label class="form-label">Nombre:</label>
+            <br>
+            <input class="form-control" type="text" #nombre>
+        </div>
+        <div>
+            <label class="form-label">Apellido:</label>
+            <br>
+            <input class="form-control" type="text" #apellido>
+        </div>
+        <div>
+            <label class="form-label">Carrera:</label>
+            <br>
+            <input class="form-control" type="text" #edad>
+        </div>
+        <button (click)="registrarDato(nombre.value, apellido.value, edad.value)">Guardar</button>
+        <br>
+        <br>
+    </div>
+</div>
