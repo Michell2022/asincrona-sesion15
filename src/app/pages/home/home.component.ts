@@ -10,12 +10,12 @@ export class HomeComponent {
   datosLista : any = [{
       nombre : 'michell',
       apellido : 'quispe',
-      carrera : 'desarrollador'
+      carrera : 'Front End'
   },
   {
-    nombre : 'yuly',
+    nombre : 'Yuliana',
     apellido : 'cuya',
-    carrera : 'odontologa'
+    carrera : 'Odontologa'
   }
 ];  
 

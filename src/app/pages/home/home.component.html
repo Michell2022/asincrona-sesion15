@@ -1,49 +1,53 @@
-<div class="w-11/12 sm:w-3/5">
-    <div>
-        <h1>Formulario de Registro</h1>
-    </div>
-    <div>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellidos</th>
-                    <th scope="col">Carrera</th>
-                    <th scope="col">Eliminar</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let dato of datosLista; let i = index">
-                    <td>{{dato.nombre}}</td>
-                    <td>{{dato.apellido}}</td>
-                    <td>{{dato.carrera}}</td>
-                    <td><button (click)="eliminarFila(i)">Eliminar</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
-    <br>
+<div class="h-screen pt-3 fondoPantalla">
+    <div class="w-11/12 bg-white mx-auto p-3 mt-3 rounded shadow-[0_0_10px_1px_rgba(0,0,0,0.2)] md:w-3/5">
+        <div>
+            <h1 class="text-4xl text-center font-bold pb-4">Formulario de Registro</h1>
+        </div>
+        <div>
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Carrera</th>
+                        <th scope="col" class="text-center">Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let dato of datosLista; let i = index">
+                        <td>{{dato.nombre}}</td>
+                        <td>{{dato.apellido}}</td>
+                        <td>{{dato.carrera}}</td>
+                        <td class="text-center"><button (click)="eliminarFila(i)"
+                                class="bg-red-500 py-1 px-8 rounded text-white hover:bg-red-600">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <div class="formulario">
-        <h2>Formulario de Registro</h2>
-        <div>
-            <label class="form-label">Nombre:</label>
-            <br>
-            <input class="form-control" type="text" #nombre>
-        </div>
-        <div>
-            <label class="form-label">Apellido:</label>
-            <br>
-            <input class="form-control" type="text" #apellido>
-        </div>
-        <div>
-            <label class="form-label">Carrera:</label>
-            <br>
-            <input class="form-control" type="text" #edad>
-        </div>
-        <button (click)="registrarDato(nombre.value, apellido.value, edad.value)">Guardar</button>
         <br>
-        <br>
+
+        <div class="w-11/12 mx-auto md:w-1/2">
+            <h2 class="text-2xl font-bold pb-3 text-center">Formulario de Registro</h2>
+            <div class="pb-3">
+                <label for="nombre" class="pr-2 pl-7">Nombre: </label>
+                <input id="nombre" type="text" #nombre
+                    class="border-solid border-2 border-blue-200 rounded pl-1 focus:outline-none focus:ring-1 focus:ring-blue-300">
+            </div>
+            <div class="pb-3">
+                <label for="apellido" class="pr-2 pl-7">Apellido:</label>
+                <input id="apellido" type="text" #apellido
+                    class="border-solid border-2 border-blue-200 rounded pl-1 focus:outline-none focus:ring-1 focus:ring-blue-300">
+            </div>
+            <div class="pb-3">
+                <label for="carrera" class="pr-4 pl-7">Carrera:</label>
+                <input id="carrera" type="text" #edad
+                    class="border-solid border-2 border-blue-200 rounded pl-1 focus:outline-none focus:ring-1 focus:ring-blue-300">
+            </div>
+            <div class="text-center">
+                <button class="bg-blue-500 py-1 px-12 rounded text-white hover:bg-blue-600"
+                    (click)="registrarDato(nombre.value, apellido.value, edad.value)">Guardar</button>
+            </div>
+        </div>
     </div>
 </div>
